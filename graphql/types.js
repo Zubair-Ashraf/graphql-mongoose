@@ -22,6 +22,12 @@ const UserType = new GraphQLObjectType({
     displayName: {
       type: GraphQLString,
     },
+    createdAt: {
+      type: GraphQLString,
+    },
+    updatedAt: {
+      type: GraphQLString,
+    },
   }),
 });
 
