@@ -9,4 +9,18 @@ const users = {
   },
 };
 
-module.exports = { users };
+const posts = {
+  type: GraphQLList(PostType),
+  resolve(parent, args) {
+    return Post.find();
+  },
+};
+
+const comments = {
+  type: GraphQLList(CommentType),
+  resolve(parent, args) {
+    return Comment.find();
+  },
+};
+
+module.exports = { users, posts, comments };

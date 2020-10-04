@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const commentSchema = new mongoose.Schema(
   {
     comment: String,
-    userId: String,
+    authorId: String,
     postId: String,
   },
   { timestamps: true }

@@ -32,4 +32,33 @@ const login = {
   },
 };
 
-module.exports = { register, login };
+const post = {
+  type: PostType,
+  args: {
+    title: { type: GraphQLString },
+    body: { type: GraphQLString },
+  },
+  async resolve(parent, args, { verifiedUser }) {
+    console.log("verifiedUser", verifiedUser);
+    const post = new Post({ ...args, authorId: verifiedUser._id });
+    return await post.save();
+  },
+};
+
+const comment = {
+  type: CommentType,
+  args: {
+    comment: { type: GraphQLString },
+    post: { type: GraphQLString },
+  },
+  async resolve(parent, args, { verifiedUser }) {
+    const comment = new Comment({
+      ...args,
+      authorId: verifiedUser._id,
+      postId: args.post,
+    });
+    return await comment.save();
+  },
+};
+
+module.exports = { register, login, post, comment };
