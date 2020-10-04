@@ -1,0 +1,28 @@
+{
+  "name": "graphql-mongoose",
+  "version": "1.0.0",
+  "description": "Graphql Api with mongo Db",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zubair-Ashraf/graphql-mongoose.git"
+  },
+  "author": "zubair-ashraf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zubair-Ashraf/graphql-mongoose/issues"
+  },
+  "homepage": "https://github.com/Zubair-Ashraf/graphql-mongoose#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.7",
+    "nodemon": "^2.0.4"
+  }
+}
